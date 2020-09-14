@@ -1,0 +1,69 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+
+	<display-name>Archetype Created Web Application</display-name>
+
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>kr.or.connect.guestbook.config.ApplicationConfig
+		</param-value>
+	</context-param>
+	<!-- config를 나눠놓았는데 이 부분을 읽어들일 수 있어야 되잖아요 listener는 어떤 특정한 이벤트가 일어났을 때 동작하는 
+		건데요. ContextLoaderListener _ run on server하면 서버가 올라가는데 context가 로딩될 때 이것을 
+		읽어서 수행해요~ 하는 거에요 Context가 로딩되는 이벤트가 일어났을 때 이 클래스(ContextLoaderListener)를 
+		실행시켜줘요. 이런 거라고 생각하시면 돼요. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+<!-- 모든 요청(/)은 DispatcherServlet이 받음. 프론트 서블릿으로 등록함. 사용할 때 ApplicationContext를 이용.
+근데 DispatcherServlet이 실행될 때 WebMvcContextConfiguration에 있는 설정을 참고해주세요 -->
+	<servlet>
+		<servlet-name>mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- front로 지정 -->
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>kr.or.connect.guestbook.config.WebMvcContextConfiguration
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc</servlet-name>
+		<url-pattern>/</url-pattern> 
+	</servlet-mapping>
+
+
+
+	<!-- filter는 요청이 수행되기 전, 응답이 나가기 전 이때 한 번씩 걸쳐서 수행을 할 수 있도록 해주는 부분인데요. -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value> <!-- 내가 지정 -->
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern> <!-- 모든 요청에 다 적용하고싶음 -->
+	</filter-mapping>
+
+
+</web-app>
