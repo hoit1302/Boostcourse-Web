@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.edwith.webbe</groupId>
+	<artifactId>calculatorcli</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>calculatorcli</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<spring.version>5.2.3.RELEASE</spring.version>
+	</properties>
+
+	<dependencies>
+		<!-- JUnit을 사용하려면 JUnit 라이브러리가 클래스패스(CLASSPATH)에 존재해야 합니다. 직접 다운로드를 받는 
+			것은 번거롭기 때문에 보통 빌드 도구인 Maven이나 Gradle을 이용해 다운로드 받아 사용합니다. Maven을 사용할 경우 pom.xml에 
+			다음을 추가합니다. scope가 test인 이유는 해당 라이브러리가 테스트 시에만 사용된다는 뜻입니다. 테스트가 아닌 상황에선 해당 
+			라이브러리가 사용되지 않습니다. -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- test mock을 위한 라이브러리를 추가합니다. -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.5</version>
+            <scope>test</scope>
+        </dependency>
+
+		<!-- spring-context와 spring-test를 의존성에 추가합니다. -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+				defaults (may be moved to parent pom) -->
+			<plugins>
+
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
