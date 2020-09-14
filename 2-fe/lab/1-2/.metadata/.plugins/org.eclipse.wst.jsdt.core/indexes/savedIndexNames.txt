@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\JE\semester3-1\web\week2 webbe\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2269965810.index
+4093241618.index
+894325525.index
+334526523.index
+1974231870.index
