@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* reset */
+기본적으로 들어가 있는 마진과 패딩 없애기
+body,
+h1,h2,h3,h4,h5,h6,
+ul, ol, dl, dd,
+p /* (위아래 마진 존재), */
+fieldset, legend
+{
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+table{
+    border-collapse: collapse;
+}
+/* 원래 italic */
+em{
+    font-style: normal;
+}
+/* 부모 요소 상속. hover, visited 모두 동일 색으로 */
+a{
+    color: inherit;
+    text-decoration: none;
+}
+/* 마우스가 오버되었을 때만 */
+a:hover{
+    text-decoration: underline;
+}
+/*하단에 마진도 패딩도 아닌 작은 공백이 있음 이미지가 인라인 요소이기에 나타나는 현상 (div로 감싸면 잘보)*/
+img{
+    vertical-align: top;
+}
+/*보통은 감싸지 않잖아요!*/
+fieldset{
+    border: 0;
+}
+/* 다들 폰트가 달라서, 전체적으로(body)*/
+body, input, textarea, select, button {
+    font-size: : 14px;
+    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
