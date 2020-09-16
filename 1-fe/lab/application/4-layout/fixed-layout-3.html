@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!-- 상단(header)과 하단(footer)를 항상 고정시키고 컨텐츠의 높이값은 최소 높이값 100%를 갖는 실습 -->
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>상단 고정 레이아웃</title>
+    <style>
+    /* .container min-height:100%를 위해 모두 */
+    html, body, .wrap{
+        height: 100%;
+        margin: 0;
+    }
+    .wrap{
+        height: 100%;
+        min-width: 800px;
+        text-align: center;
+    }
+    .header {
+        position: fixed; /* 상단 고정 */
+        top: 0; right: 0; left: 0;
+        height: 100px;
+        background-color: lightgreen;
+    }
+
+    .container {
+        min-height: 100%;
+        padding: 100px 0; /* height, footer 뒤로 가려진 영역 노출 */
+        box-sizing: border-box; /* padding값을 높이에서 무시하도록 속성 추가 */
+    }
+
+    .content {
+        height: 300px;
+        background-color: lightsalmon;
+
+    }
+    .footer {
+        position: fixed;
+        height: 100px;
+        bottom:0; left:0; right:0;
+        background-color: lightblue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap"> <!-- 감싸주기 -->
+        <div class="header">header</div>
+        <div class="container">
+            <div class="content">content</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>
