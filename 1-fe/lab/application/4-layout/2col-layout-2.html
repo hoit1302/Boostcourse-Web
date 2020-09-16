@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>2단 레이아웃(display:table)</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    html, body, .wrap {
+        height: 100%;
+    }
+    .wrap {
+        min-width: 800px;
+        text-align: center;
+    }
+    .header {
+        height:100px;
+        background-color: lightgreen;
+    }
+    .container {
+        display: table;
+        table-layout: fixed;
+        width:800px;
+        min-height: 100%;
+        margin: -100px auto;
+        padding: 100px 0;
+        box-sizing: border-box;
+    }
+    .content { /* container의 높이값을 table-cell이 상속받음! */
+        display: table-cell;
+        width: 500px;
+        background-color: lightsalmon;
+        /* 구분선 만들기 */
+        border-right: 5px solid #000;
+    }
+    .aside {
+        display: table-cell;
+        /* width: 300px; */ /* 800 - 500 - 5 자동으로 해줌 */
+        background-color: lightseagreen;
+    }
+
+    .footer {
+        height:100px;
+        background-color: cornflowerblue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">header</div>
+        <div class="container">
+            <div class="content">content</div>
+            <div class="aside">aside</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>
