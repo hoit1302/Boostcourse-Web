@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="tab.css">
+    <title>탭 실습</title>
+</head>
+<body>
+    <div class="tab_wrap">
+        <!-- 탭 목록 -->
+        <ul class="tab">
+            <!-- 탭 목록 활성화 클래스 active 추가 -->
+            <li class="tab_item active">
+                <button type="button" class="tab_btn">인기순</button>
+            </li>
+            <li class="tab_item">
+                <button type="button" class="tab_btn">조회순</button>
+            </li>
+            <li class="tab_item">
+                <button type="button" class="tab_btn">날짜순</button>
+            </li>
+        </ul>
+        <!-- 인기순 탭 패널 wrap -->
+        <!-- 탭 패널 활성화 클래스 active 추가 -->
+        <div class="tab_panel_wrap active">
+            <!-- 좀 더 시맨틱한 마크업 구조에서는 타이틀을 넣음. -->
+            <!-- 콘텐츠 내부에서 h1, h2가 쓰이는 경우는 드물기에 h3로. -->
+            <h3>인기순 콘텐츠</h3>
+            <!-- 탭 패널 -->
+            <ol class="tab_panel">
+                <li class="panel_item"><a href="#" class="item_link">1. 서울~런던 30분 만에 도착…장거리 로켓 여행, 2030년 내 가능</a></li>
+                <li class="panel_item"><a href="#" class="item_link">2. 웬만해선 안 죽는다는 '물곰'에게서 극한생존 열쇠 찾는다</a></li>
+                <li class="panel_item"><a href="#" class="item_link">3. 애플, '에어팟 2세대' 발표</a></li>
+                <li class="panel_item"><a href="#" class="item_link">4. 한국어 지원하는 미승인 성인게임물 범람</a></li>
+                <li class="panel_item"><a href="#" class="item_link">5. [이슈+] "혁신없는 가격인상"…에어팟2, 애플 충성고객마저 떠난다</a></li>
+                <li class="panel_item"><a href="#" class="item_link">6. KAIST, 세탁 가능한 입는 디스플레이 개발</a></li>
+                <li class="panel_item"><a href="#" class="item_link">7. "세계 최초 5G 상용화"…삼성 '갤럭시S10 5G' 다음달 5일 출시</a></li>
+                <li class="panel_item"><a href="#" class="item_link">8. 중국업체, 국산 배터리 탑재 전기차 5대 형식승인 신청</a></li>
+                <li class="panel_item"><a href="#" class="item_link">9. 美 마이크론 '이례적' D램·낸드 감산…메모리 업황 회복 기대</a></li>
+                <li class="panel_item"><a href="#" class="item_link">10. 아흔살 의사의 건강비결은 ‘매일 15분 맨손 운동’</a></li>
+            </ol>
+        </div>
+        <!-- 조회순 탭 패널 wrap -->
+        <div class="tab_panel_wrap">
+            <h3>조회순 콘텐츠</h3>
+            <!-- 탭 패널 -->
+            <ol class="tab_panel">
+                <li class="panel_item"><a href="#" class="item_link">1. 서울~런던 30분 만에 도착…장거리 로켓 여행, 2030년 내 가능</a></li>
+                <li class="panel_item"><a href="#" class="item_link">2. 웬만해선 안 죽는다는 '물곰'에게서 극한생존 열쇠 찾는다</a></li>
+                <li class="panel_item"><a href="#" class="item_link">3. 애플, '에어팟 2세대' 발표</a></li>
+                <li class="panel_item"><a href="#" class="item_link">4. 한국어 지원하는 미승인 성인게임물 범람</a></li>
+                <li class="panel_item"><a href="#" class="item_link">5. [이슈+] "혁신없는 가격인상"…에어팟2, 애플 충성고객마저 떠난다</a></li>
+            </ol>
+        </div>
+        <!-- 날짜순 탭 패널 wrap -->
+        <div class="tab_panel_wrap">
+            <h3>날짜순 콘텐츠</h3>
+            <!-- 탭 패널 -->
+            <ol class="tab_panel">
+                <li class="panel_item"><a href="#" class="item_link">1. 서울~런던 30분 만에 도착…장거리 로켓 여행, 2030년 내 가능</a></li>
+                <li class="panel_item"><a href="#" class="item_link">2. 웬만해선 안 죽는다는 '물곰'에게서 극한생존 열쇠 찾는다</a></li>
+                <li class="panel_item"><a href="#" class="item_link">3. 애플, '에어팟 2세대' 발표</a></li>
+                <li class="panel_item"><a href="#" class="item_link">4. 한국어 지원하는 미승인 성인게임물 범람</a></li>
+                <li class="panel_item"><a href="#" class="item_link">5. [이슈+] "혁신없는 가격인상"…에어팟2, 애플 충성고객마저 떠난다</a></li>
+                <li class="panel_item"><a href="#" class="item_link">6. KAIST, 세탁 가능한 입는 디스플레이 개발</a></li>
+                <li class="panel_item"><a href="#" class="item_link">7. "세계 최초 5G 상용화"…삼성 '갤럭시S10 5G' 다음달 5일 출시</a></li>
+                <li class="panel_item"><a href="#" class="item_link">8. 중국업체, 국산 배터리 탑재 전기차 5대 형식승인 신청</a></li>            </ol>
+            </div>
+        </div>
+    </body>
+    </html>

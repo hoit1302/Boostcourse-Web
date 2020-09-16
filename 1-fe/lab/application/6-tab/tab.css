@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* 기본 스타일 */
+body {
+    font-family: '나눔고딕', NanumGothic, Dotum, '돋움', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+}
+body, ul, ol, li, div, a, button {
+    margin:0;
+    padding:0;
+}
+ul, ol {
+    list-style:none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 탭 제작 */
+.tab_wrap {
+    width: 300px;
+    margin: 20px auto 0;
+}
+/* float을 해제하는 습관을 갖자. */
+.tab:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.tab_item {
+    float: left;
+}
+/* button은 box-sizing: border-box가 기본 */
+.tab_btn {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    color: #999;
+    background-color: transparent;
+    border: 1px solid #eee;
+    outline: 0; /* 버튼 속성 중 하나. 초기화 */
+    cursor: pointer;
+}
+/* .tab_item에 다음에 오는 .tab_item들의 아래 .tab_btn */
+.tab_item + .tab_item .tab_btn {
+    width: 101px;
+    /* 왼쪽으로 1px씩 이동  */
+    margin-left: -1px;
+}
+/* 탭 목록 오버 시, 활성화 시 효과 */
+.tab_item .tab_btn:hover,
+.tab_item.active .tab_btn {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 0; /* 하단 라인 감추기 */
+}
+
+
+.tab_panel_wrap {
+    display: none; /* 탭 패널은 기본 비노출 처리 */
+}
+.tab_panel_wrap.active {
+    display: block; /* 활성화 시 탭 패널 노출 처리 */
+}
+.tab_panel_wrap {
+    min-height: 350px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-top: 0; /* 상단 라인 감추기 */
+    box-sizing: border-box;
+}
+.tab_panel_wrap h3 {
+    /* 요소 감추기 속성은 blind 클래스로 대체 가능(HTML&CSS 활용>IR기법 강좌 참고)  */
+    /* normal-flow에서 벗어남 */
+    position: absolute;
+    /* 아래로 */
+    z-index: -1;
+    color: transparent;
+}
+.item_link {
+    font-size: 14px;
+    line-height: 30px;
+    color: #333;
+    /* 한 줄 말줄임 처리 */
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.panel_item:hover .item_link {
+    font-weight: bold;
+}
