@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>float</title>
+    <style media="screen">
+    .wrap {
+        width: 400px;
+        margin: 0 auto;
+        border: 3px dotted grey;
+    }
+    /* 자식 요소가 좌우로 플로팅 되었을 때 부모가 float 속성(none을 제외)을 가진다면
+    부모 요소는 자식 요소의 높이 값을 수렴하게 됩니다.
+    즉, 자식의 float을 따로 해제해주지 않아도 됩니다. */
+    /* 하지만 그 부모 요소도 해제가 필요한 상황이 됨. */
+
+    /* 자식 요소의 float을 해제하기 위해서 부모 요소에 의미 없는 float을 부여하는 방법을 사용하는 것은 좋지 않다 */
+    /* 이미 float이 되어 있는 부모 요소가 자식 요소들에게 float이 부여된다고 했을 때
+    따로 해제 방법을 사용할 필요가 없다는 것을 배우는 용도로 공부해보는 것. */
+
+    .parent {
+        float: left;
+        border: 3px dotted blue;
+        padding: 10px;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        color: #fff;
+        text-align: center;
+    }
+    .box1{
+        float: left;
+        background: green;
+    }
+    .box2{
+        float:right;
+        background: pink;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class ="parent">
+            <div class="box box1"> box1 </div>
+            <div class="box box2"> box2 </div>
+        </div>
+    </div>
+</body>
+</html>
