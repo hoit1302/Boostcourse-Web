@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>상단 고정 레이아웃</title>
+    <style>
+    html, body, .wrap {
+        height: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    /* 상단 고정 */
+    .header {
+        position: fixed;
+        top: 0; right: 0; left: 0;
+        height: 100px;
+        background-color: lightgreen;
+    }
+    .container {
+        /* 사이트의 최소 높이값을 100% */
+        min-height: 100%;
+        /* 페이지를 벗어나 더 위로 100px만큼 -> footer 올라옴 */
+        margin-top: -100px;
+    }
+    .content {
+        height: 700px;
+        /* 가려진 height의 높이값과 끌어올린 footer의 높이값을 합친 값을 padding-top으로 밀어줍니다. */
+        padding-top: 200px;
+        background-color: lightsalmon;
+    }
+    /* 하단 고정 */
+    .footer {
+        position: fixed;
+        bottom: 0; left:0; right:0;
+        height: 100px;
+        background-color: lightblue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">header</div>
+        <div class="container">
+            <div class="content">content</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>
