@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>float</title>
+        <style media="screen">
+            .wrap {
+                width: 400px;
+                margin: 0 auto;
+            }
+            .parent {
+                position: relative;
+                /* 이 부분 추가 ! 자식 요소가 부모 요소를 벗어나지 않는다는 문제 상황만 피한다면 ok */
+                /* 부모의 영역을 벗어나는 팝업과 같은 자식 콘텐츠가 있다고 가정한다면 그 팝업의 내용이 보이지 않는 현상 */
+                overflow: hidden;
+                border: 3px dotted blue;
+                padding: 10px;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                color: #fff;
+                text-align: center;
+            }
+            .box1{
+                float: left;
+                background: green;
+            }
+            .box2{
+                float:right;
+                background: pink;
+                height: 200px;
+            }
+            .pop {
+                position: absolute;
+                right: -50px;
+                top: 150px;
+                background: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class ="parent">
+                <div class="box box1"> box1 </div>
+                <div class="box box2"> box2 </div>
+                <div class="box pop">popup</div>
+            </div>
+        </div>
+    </body>
+</html>
