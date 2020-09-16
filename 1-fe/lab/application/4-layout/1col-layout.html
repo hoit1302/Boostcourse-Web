@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>1단 레이아웃</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    .wrap{ /*부모에게 주기 -> 다 같은 성질을 가짐 */
+        min-width: 800px;
+        text-align: center;
+    }
+    .header {
+        height: 100px;
+        background-color: lightgreen;
+    }
+    .content {
+        max-width: 1200px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: lightsalmon;
+    }
+    .footer {
+        height:  100px;
+        background-color: lightblue;
+    }
+
+    </style>
+</head>
+<body>
+     <!-- 감싸주기 -->
+    <div class="wrap">
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>
