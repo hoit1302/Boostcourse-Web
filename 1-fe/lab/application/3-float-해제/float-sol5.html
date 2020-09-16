@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset = "utf-8">
+        <title> float </title>
+        <style media = "screen">
+            .wrap {
+                width: 400px;
+                margin: 0 auto;
+            }
+            .parent {
+                border: 3px dotted blue;
+                padding: 10px;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                color: #fff;
+                text-align: center;
+            }
+            .box1{
+                float: left;
+                background: green;
+            }
+            .box2{
+                float:right;
+                background: pink;
+            }
+            /* :after 자식 요소들 중에서 가장 마지막에 위치하도록 */
+            .parent:after {
+                display: block;
+                clear: both;
+                content: ''; /* 가상 요소이기에 필수 속성인 content */
+            }
+            /* 빈 태그로 clear 속성을 준 효과와 동일한 효과를 주면서
+            시멘트 마크업 요소에 반하지 않는 해제 방법 */
+            /* 결론적으로 해제 방법으로 가장 보편적으로 많이 사용 */
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class ="parent">
+                <div class="box box1"> box1 </div>
+                <div class="box box2"> box2 </div>
+            </div>
+        </div>
+    </body>
+</html>
