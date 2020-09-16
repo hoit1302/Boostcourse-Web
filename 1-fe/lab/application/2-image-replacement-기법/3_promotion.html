@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>네이버 쇼핑 프로모션</title>
+    <style media="screen">
+    /* reset */
+    ol {
+        list-style: none;
+    }
+
+    body, ol {
+        margin: 0;
+        padding: 0;
+    }
+    /* wrap */
+    .wrap {
+        position: relative; /* absolute의 기준 */
+        width: 1020px;
+        height: 650px;
+        margin: 0 auto;
+        background: url(promotion.png) no-repeat 0 0;
+        background-size: cover;
+    }
+    /* visually-hidden */
+    .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    /* stylesheet */
+    .link_point {
+        position: absolute; /* 자동으로 block화 된다 !!! */
+        left: 140px;
+        bottom: 138px;
+        width: 110px;
+        height: 20px;
+        /* background: red; opacity: 0.5; */
+    }
+
+    .link_join {
+        position: absolute; /* 자동으로 block화 된다 !!! */
+        bottom: 52px;
+        left: 348px;
+        width: 302px;
+        height: 62px;
+        /* background: blue; opacity: 0.5; */
+    }
+    </style>
+</head>
+<body>
+    <!-- 이미지 1개 - wrap 1개 대응해주는 것이 좋다. -->
+    <!-- blind 클래스는 div로 묶어서 넣어도 되고 각각 넣어도 되고.  -->
+    <div class="wrap">
+        <h1 class="blind">알면 알수록 즐거운 네이버쇼핑 윈도시리즈</h1>
+        <p class="blind">쇼핑 즐기고 10%적립 혜택도 받으세요!</p>
+
+        <ol>
+            <li>
+                <strong class="blind">100 포인트만 있으면!</strong>
+                <p class="blind">포인트 100원 이상 보유 시 신청 가능(신청 확인용으로 차감되지 않습니다.)</p>
+                <a href="#" class="link_point"><span class="blind">포인트가 부족하다면?</span></a>
+            </li>
+            <li class="blind">
+                <strong>쇼핑윈도 시리즈 즐기고~</strong>
+                <p>11.15 ~ 11.30 누적 1만원 이상 구매</p>
+            </li>
+            <li class="blind">
+                <strong>구매금액 10%적립</strong>
+                <p>최대 1만원 네이버페이 포인트 적립</p>
+            </li>
+        </ol>
+
+        <a href="#" class="link_join"><span class="blind">신청하기</span></a>
+
+        <h2 class="blind">유의 사항</h2>
+        <ul class="blind">
+            <li>BIG3 쇼핑 이벤트와 중복으로 신청하실 수 없습니다.</li>
+            <li>내부 사정에 따라 공지 없이 신청 종료될 수 있습니다.</li>
+        </ul>
+    </div>
+</body>
+</html>
