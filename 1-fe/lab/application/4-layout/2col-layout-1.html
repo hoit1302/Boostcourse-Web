@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>다단 레이아웃</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    html, body, .wrap {
+        /* container의 min-height 값은
+        최상단의 부모 요소로부터 상속을 받아야 되기 때문에. */
+        height: 100%;
+        text-align: center;
+    }
+
+    .header {
+        height:100px;
+        background-color: lightgreen;
+    }
+    .container {
+        position: relative; /* 컨테이너의 기준선 잡아주기 와 포지션 잘 알라고... */
+        width:800px;
+        min-height: 100%;
+        margin: -100px auto;
+        padding: 100px 0;
+        box-sizing: border-box;
+    }
+    .container:after { /* float을 헤재하는 코드가 꼭 필요함 */
+        display: block;
+        clear: both;
+        content: '';
+    }
+    .content {
+        float: left;
+        width: 500px;
+        height: 300px;
+        background-color: lightsalmon;
+    }
+    .aside {
+        float: left;
+        width: 300px;
+        height: 400px;
+        background-color: lightseagreen;
+    }
+    .aside:after{ /* 구분선 만들기 */
+        content:'';
+        width:5px;
+        background-color: #000;
+
+        position: absolute;
+        right: 300px;
+        top: 100px;
+        bottom: 100px;
+
+    }
+    .footer {
+        height:100px;
+        background-color: cornflowerblue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">header</div>
+        <div class="container">
+            <div class="content">content</div>
+            <div class="aside">aside</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>
