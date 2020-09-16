@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>float</title>
+        <style media="screen">
+            .wrap {
+                width: 400px;
+                margin: 0 auto;
+            }
+            .parent {
+                border: 3px dotted blue;
+                padding: 10px;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                color: #fff;
+
+                text-align: center;
+            }
+            .box1{
+                float: left;
+                background: green;
+            }
+            .box2{
+                float:right;
+                height: 200px;
+                background: pink;
+            }
+            /* clear속성: float의 흐름을 끊기 위한 float 해제 전용 속성 */
+            /* 플롯 뒤에 나오는 친구는 플롯의 영향에서 벗어날래 */
+            /* 클리어는 블럭 요소에서만 적용 */
+            .clear {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class ="parent">
+                <div class="box box1"> box1 </div>
+                <div class="box box2"> box2 </div>
+                <!-- 시맨틱적인 마크업에서는 불필요한 요소가 생기는 단점 -->
+                <div class="clear"></div>
+            </div>
+        </div>
+    </body>
+</html>
