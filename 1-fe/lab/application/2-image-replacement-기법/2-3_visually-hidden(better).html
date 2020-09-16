@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            .clip_wrap {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                margin: 50px;
+                border: 1px solid red;
+            }
+            .clip-target {
+                background: lavender;
+            }
+            .visually-hidden {
+                 /* 레이아웃에 영향을 끼치지 않도록 */
+                position: absolute;
+
+                 /* 스크린 리더가 읽을 수 있도록 */
+                width: 1px;
+                height: 1px;
+
+                /* 눈에 보이는 부분을 제거 */
+                /* 왜 top right를 안 쓰나? 전체 요소 크기가 커짐. */
+                margin: -1px; /* 위, 왼쪽으로 1px씩 이동 */
+                overflow: hidden; /*  visible이면 clip 적용 X */
+                clip: rect(0 0 0 0); /* 자르기. */
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clip_wrap">
+            <div class="clip-target visually-hidden">
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기
+            </div>
+        </div>
+    </body>
+</html>
