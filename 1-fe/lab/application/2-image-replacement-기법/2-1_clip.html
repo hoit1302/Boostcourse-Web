@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            .clip_wrap {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                margin: 50px;
+                border: 1px solid red;
+            }
+            .clip-target {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: lavender;
+                /* 위에서 10px떨어진, 왼쪽에서 80px 떨어진, 위에서 200px 떨어진,  왼쪽에서 20px 떨어진 */
+                clip: rect(10px 80px 200px 20px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clip_wrap">
+            <div class="clip-target">
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기<br>
+                clip으로 요소 가리기
+            </div>
+        </div>
+    </body>
+</html>
