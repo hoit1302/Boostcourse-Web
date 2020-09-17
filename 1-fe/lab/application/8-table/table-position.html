@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="table-position.css">
+    <title></title>
+</head>
+<body>
+
+    <div class="wrap">
+        <table class="td_relative">
+            <caption>td에 relative</caption>
+            <tr>
+                <td class="relative_section">
+                    <div class="absolute_section"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="wrap">
+        <table class="tr_relative">
+            <caption>tr에 relative</caption>
+            <tr class="relative_section">
+                <td>
+                    <div class="absolute_section"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="wrap">
+        <table class="table_relative relative_section">
+            <caption>table에 relative</caption>
+            <tr>
+                <td>
+                    <div class="absolute_section"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="wrap div_relative">
+        <table>
+            <caption>div에 relative</caption>
+            <tr>
+                <td>
+                    <div class="relative_section">
+                        <div class="absolute_section"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+    </html>

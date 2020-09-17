@@ -1,0 +1,44 @@
+table {
+    border: 1px solid #000;
+    table-layout: fixed;
+    width: 100%;
+    height: 150px;
+    border-collapse: collapse;
+}
+.td_relative {
+    border-color: red;
+}
+.tr_relative {
+    border-color: blue;
+}
+.table_relative {
+    border-color: green;
+}
+
+.wrap {
+    margin: 50px;
+}
+.relative_section {
+    position: relative;
+}
+.absolute_section {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    background-color: #000;
+}
+.td_relative .absolute_section {
+    background-color: red;
+}
+.tr_relative .absolute_section {
+    background-color: blue;
+}
+.table_relative .absolute_section {
+    background-color: green;
+}
+.div_relative .relative_section {
+    width: 100%;
+    height: 100%;
+}
