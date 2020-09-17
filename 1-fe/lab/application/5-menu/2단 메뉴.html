@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>메뉴 실습 2</title>
+    <style media="screen">
+    /* 기본 스타일 */
+    body {
+        font-family: '나눔고딕', NanumGothic, Dotum, '돋움', sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    body, ul, li, div, a {
+        margin: 0;
+        padding:0;
+    }
+    ul, ol {
+        list-style: none;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* 2단 메뉴 */
+    .menu {
+        width: 700px;
+        margin: 20px auto 0; /* 좌우 auto : 블럭요소 가운데 정렬 */
+        text-align: center;
+    }
+    .menu_item{
+        display: inline-block;
+        /* 블럭이지만 인라인 요소처럼 가로로 주르륵 */
+    }
+    .menu_link{
+        display: block;
+        padding: 13px 20px; /* 각 메뉴의 높이와 너비가 더 커지는 역할 */
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #444;
+    }
+    .menu_item:hover .menu_link,
+    .menu_item.active .menu_link  {
+        color: green;
+    }
+
+    .submenu {
+        display: none; /* 서브 메뉴는 기본 비노출 처리 */
+        /* 15분 쯤 position 부모요소 relative면 자식요에 영향 줌. */
+        /* 웹툰의 경우 웹툰이라는 상위요소에 영향을 받는다.  */
+        position: absolute;
+        left: 0;
+        width: 100%;
+        min-width: 700px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+    .submenu_item{
+        display: inline-block;
+    }
+    .submenu_link{
+        display: block;
+        padding: 15px 35px;
+        font-size: 17px;
+        line-height: 20px;
+        color: #333;
+    }
+    .menu_item.active .submenu {
+        display: block;
+    }
+    /* 서브 메뉴 선택, 활성화 시 효과 */
+    .submenu_item:hover .submenu_link,
+    .submenu_item.active .submenu_link {
+        font-weight: bold;
+        color: green;
+    }
+    .submenu_link span {
+        position: relative;
+    }
+    /* 서브 메뉴 선택, 활성화 시 하단 라인 노출 효과 (글자크기만큼만 녹색 라인 표현하기 위해) */
+    .submenu_item:hover span:after,
+    .submenu_item.active span:after {
+        position: absolute;
+        content: '';
+        right: 0;
+        bottom: -15px;
+        left: 0;
+        border-bottom: 2px solid green;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="menu">
+            <li class="menu_item"> <!-- 클래스가 2개 .menu_item .active 웹툰이 활성화되었을 때 이렇게 쓰면 된다 -->
+                <a href="#" class="menu_link">웹툰</a>
+                <ul class="submenu">
+                    <li class="submenu_item">
+                        <a href="#" class="submenu_link">요일별</a>
+                    </li>
+                    <li class="submenu_item">
+                        <a href="#" class="submenu_link">장르별</a>
+                    </li>
+                    <li class="submenu_item">
+                        <a href="#" class="submenu_link">작가별</a>
+                    </li>
+                    <li class="submenu_item">
+                        <a href="#" class="submenu_link">연도별</a>
+                    </li>
+                    <li class="submenu_item">
+                        <a href="#" class="submenu_link">작품별</a>
+                    </li>
+                </ul>
+
+            </li>
+            <li class="menu_item">
+                <a href="#" class="menu_link">블로그</a>
+            </li>
+            <li class="menu_item active">
+                <a href="#" class="menu_link">지식백과</a>
+                <!-- 서브 메뉴 -->
+                <ul class="submenu active">
+                    <li class="submenu_item"><a href="#" class="submenu_link"><span>건강백과</span></a></li>
+                    <li class="submenu_item"><a href="#" class="submenu_link active"><span>밀리터리백과</span></a></li>
+                    <li class="submenu_item"><a href="#" class="submenu_link"><span>음식백과</span></a></li>
+                    <li class="submenu_item"><a href="#" class="submenu_link"><span>동물백과</span></a></li>
+                </ul>
+            </li>
+            <li class="menu_item">
+                <a href="#" class="menu_link">카페</a>
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+</html>
