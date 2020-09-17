@@ -1,0 +1,29 @@
+p {
+  width: 200px;
+  background-color: yellow;
+  font-size: 16px;
+  line-height: 20px;
+}
+.elip1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.elip2 {
+  max-height: 40px; /* line-height*line수 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* webkit 계열 브라우저에서 여러 줄 말줄임 처리를 적용하기 위해서 선언한 부분입니다.
+  크롬, 오페라, 사파리 같은 브라우저에서 동작 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.elip3 {
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
