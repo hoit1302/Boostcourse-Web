@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>메뉴실습1</title>
+    <style media="screen">
+        body {
+            font-family: '나눔고딕', NanumGothic, Dotum, '돋움', sans-serif;
+        }
+        body, ul, li, div, a {
+            margin: 0;
+            padding:0;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap{
+            max-width: 700px;
+            min-width: 500px;
+            margin: 5px auto; /* 메뉴 외곽선 부분 확인 위해서 */
+
+        }
+        .menu{
+            display: table; /* 메뉴의 간격을 모두 동일한 너비로 하기 위해 */
+            table-layout: fixed; /* 테이블의 간격을 동일하게. 없으면 텍스트 길이에 따라서 갖는 table-cell의 너비가 달라 */
+            /* 결론: 전체 너비 1/N */
+            width: 100%; /* 메뉴를 감싸는 부모 요소의 너비 값과 동일 */
+        }
+        .menu_item {
+            display: table-cell; /* 부모 요소가 table 이기에 */
+        }
+        .menu_link{
+            display: block;
+            height: 36px;
+            border: 1px solid #ddd;
+            font-size: 12px;
+            line-height: 36px;
+            color: #333;
+            text-align: center;
+        }
+        /* menu_item 다음의 menu_item의 menu_link들은 이 값을. */
+        .menu_item + .menu_item .menu_link {
+            margin-left: -1px;
+            /* 왼쪽으로 1px 이동. 끝은 선이 1px인데 가운데 부분은 2px이라 */
+        }
+        /* menu_item에 마우스를 올려놓았을 때 menu_link에 */
+        .menu_item:hover .menu_link {
+            /* menu_link에 해도 똑같이 작동하나
+            li 구조인 부모에 hover을 걸어주는 것이 확장성에 좋다. */
+            color: green;
+            font-weight: bold;
+            background-color: black;
+        }
+        /* menu_item의 active가 있는 친구의 menu_link에 효과 선언 */
+        .menu_item.active .menu_link{
+            position: relative; /* z-index의 값이 새로 생성됨. 해당 메뉴 구조에서 제일 상단에. */
+            /* 왜? 안하면 카페의 오른쪽 외곽선이 사라진다 */
+            border-color: #555;
+            font-weight: bold;
+            color: #fff;
+            background-color: gray;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="menu">
+            <li class="menu_item"><a href="#" class="menu_link">메일</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">카페</a></li>
+            <li class="menu_item active"><a href="#" class="menu_link">소프트웨어</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">지식백과</a></li>
+            <li class="menu_item"><a href="#" class="menu_link">영화</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
