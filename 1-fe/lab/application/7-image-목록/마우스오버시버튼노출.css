@@ -1,0 +1,44 @@
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.box + .box {
+  margin-top: 30px;
+}
+.img_link {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.alert {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.del_link {
+  display: none;
+  position: absolute;
+  top:0;
+  right: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* 이미지 링크에 오버를 했을 때 del_link에 x 버튼이 노출이 되게 되는데
+이미지 링크의 오버는 display: block이 풀려서 x버튼이 깜빡깜빡. */
+/* 특정 a 태그의 마우스 오버 시 다른 a 태그 마우스 오버 상태가 풀리는 현상 */
+.test1 .img_link:hover + .del_link {
+	display: block;
+}
+.test2:hover > .del_link {
+	display: block;
+}
