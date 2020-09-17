@@ -1,0 +1,30 @@
+.change {
+  float: left;
+  padding: 10px;
+  text-align: center;
+}
+.change:after {
+  display: block;
+  width: 100px;
+  height: 100px;
+  content: '';
+  border: 1px solid gray;
+  background-color: pink;
+}
+.up:after {
+  background: url(https://image.flaticon.com/icons/png/512/187/187142.png) no-repeat;
+  background-size: cover;
+}
+.down:after {
+  background: url(https://image.flaticon.com/icons/png/512/187/187154.png) no-repeat;
+  background-size: cover;
+}
+/* IR(*Image Replacement) 처리 */
+.blind {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
