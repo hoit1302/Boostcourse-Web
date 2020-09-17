@@ -1,0 +1,17 @@
+.img_wrap {
+  position: relative;
+  width: 200px;
+  height: 134px;
+}
+/* after를 사용할 때는 반드시 position이나 display 같은 속성이 먼저 들어가야 함. */
+.img_wrap:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  /* 이미지에 필터 씌우는 것 같이 동작 */
+  background-color: rgba(0, 0, 0, 0.15);
+}
